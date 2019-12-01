@@ -15,7 +15,7 @@ window.onload = async function () {
             })
             .then(_ => {
                 var rangeslider = document.getElementById("sliderRange");
-                var output = document.getElementById("demo");
+                var output = document.getElementById("speedInfo");
                 output.innerHTML = rangeslider.value;
 
                 rangeslider.oninput = function () {
@@ -35,9 +35,9 @@ window.onload = async function () {
                 let music1Btn = document.getElementById('music1Btn');
                 let music2Btn = document.getElementById('music2Btn');
                 upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-rangeslider.value, rangeslider.value) });
-                downBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, -250) });
-                leftBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, 250) });
-                rightBtn.addEventListener('touchstart', _ => { mBot.processMotor(-250, -250) });
+                downBtn.addEventListener('touchstart', _ => { mBot.processMotor(rangeslider.value, -rangeslider.value) });
+                leftBtn.addEventListener('touchstart', _ => { mBot.processMotor(rangeslider.value, rangeslider.value) });
+                rightBtn.addEventListener('touchstart', _ => { mBot.processMotor(-rangeslider.value, -rangeslider.value) });
 
                 upBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 downBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
