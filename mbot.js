@@ -227,10 +227,8 @@ class MBot {
                     byte8 = 0xfa;
                     byte9 = 0x00;
                 }
-                // byte8 = 0xf0;
-                // byte9 = 0x00;
-                // byte10 = 0x00;
-                // byte12 = 0x00;
+                byte10 = 0x00;
+                byte12 = 0x00;
 
                 break;
         }
@@ -241,10 +239,8 @@ class MBot {
         bufView[3] = byte7 << 8 | byte6;
         bufView[4] = byte9 << 8 | byte8;
         bufView[5] = byte11 << 8 | byte10;
-        console.log("buff view")
-        console.log(buf)
-        // bufView[6] = byte13 << 8 | byte12;
-        // bufView[7] = byte15 << 8 | byte14;
+        bufView[6] = byte13 << 8 | byte12;
+        bufView[7] = byte15 << 8 | byte14;
         console.log(
             byte0.toString(16) + ":" +
             byte1.toString(16) + ":" +
@@ -277,6 +273,7 @@ class MBot {
     }
 
     _writeCharacteristic(value) {
+        console.log("This is what is written:" + value)
         return this.device.gatt.getPrimaryService(this.config.service())
             .then(service => service.getCharacteristic(this.config.charateristic()))
             .then(characteristic => characteristic.writeValue(value));
