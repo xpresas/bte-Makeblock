@@ -36,19 +36,22 @@ window.onload = function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
                 music1Btn.addEventListener('click', _ => {
-                    mBot.processBuzzer("E3half"),
-                        sleep(1000),
-                        mBot.processBuzzer("E3quarter"),
-                        sleep(1000),
-                        mBot.processBuzzer("G3quarter"),
-                        sleep(1000),
-                        mBot.processBuzzer("E3quarter"),
-                        sleep(1000),
-                        mBot.processBuzzer("D3quarter"),
-                        sleep(1000),
-                        mBot.processBuzzer("C3whole"),
-                        sleep(1000),
-                        mBot.processBuzzer("B2whole")
+                    mBot.processBuzzer("E3half").then(sleep(1000))
+                        .then(mbot.processBuzzer("E3quarter"))
+                        .then(sleep(1000))
+                        .then(mbot.processBuzzer("G3quarter"));
+                    // sleep(1000),
+                    // mBot.processBuzzer("E3quarter"),
+                    // sleep(1000),
+                    // mBot.processBuzzer("G3quarter"),
+                    // sleep(1000),
+                    // mBot.processBuzzer("E3quarter"),
+                    // sleep(1000),
+                    // mBot.processBuzzer("D3quarter"),
+                    // sleep(1000),
+                    // mBot.processBuzzer("C3whole"),
+                    // sleep(1000),
+                    // mBot.processBuzzer("B2whole")
                 });
                 music2Btn.addEventListener('click', _ => {
                     // mBot.processBuzzer("E3half")
