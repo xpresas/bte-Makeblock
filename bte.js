@@ -31,7 +31,7 @@ window.onload = function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                musicBtn.addEventListener('click'), _ => { mBot.processBuzzer(4), mBot.processBuzzer(2) }
+                musicBtn.addEventListener('touchstart'), _ => { mBot.processBuzzer(4) }
             })
     })
 
