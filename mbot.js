@@ -85,10 +85,10 @@ class MBot {
 
     }
 
-    processBuzzer() {
+    processBuzzer(note) {
         console.log("Port2");
         this.buzzerIndex = (this.buzzerIndex + 1) % 8;
-        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, this.buzzerIndex))
+        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, note))
             .catch(error => {
                 console.error(error);
             });
@@ -176,6 +176,7 @@ class MBot {
                 //ff:55:05:00:02:22:5d:01:0a
                 //ff:55:05:00:02:22:4a:01:0a
                 //ff:55:05:00:02:22:26:01:0a
+                // 0  1  2  3  4  5  6  7  8  9
                 //ff:55:07:00:02:22:7b:00:fa:00
                 byte2 = 0x07;
                 byte5 = 0x22;
