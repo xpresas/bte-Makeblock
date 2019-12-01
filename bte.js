@@ -36,11 +36,11 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
                 music1Btn.addEventListener('click', _ => {
-                    mBot.processBuzzer("E3half")
-                        .then(sleep(1000))
-                        .then(mbot.processBuzzer("E3quarter"))
-                        .then(sleep(1000))
-                        .then(mbot.processBuzzer("G3quarter"));
+                    mBot.processBuzzer("E3half");
+                    await sleep(1000);
+                    mbot.processBuzzer("E3quarter");
+                    await sleep(1000);
+                    mbot.processBuzzer("G3quarter");
                     // sleep(1000),
                     // mBot.processBuzzer("E3quarter"),
                     // sleep(1000),
