@@ -160,6 +160,7 @@ class MBot {
                 break;
             case TYPE_RGB:
                 // ff:55  09:00  02:08  06:00  5c:99  6d:00  0a
+                // ff:55  09:00  02:08  07:02  00:0a  00:00
                 // 0x55ff;0x0009;0x0802;0x0006;0x995c;0x006d;0x000a;0x0000;
                 byte7 = 0x00;
                 byte8 = value >> 8 & 0xff;
@@ -175,7 +176,8 @@ class MBot {
                 //ff:55:05:00:02:22:5d:01:0a
                 //ff:55:05:00:02:22:4a:01:0a
                 //ff:55:05:00:02:22:26:01:0a
-                byte2 = 0x05;
+                //ff:55:07:00:02:22:7b:00:fa:00
+                byte2 = 0x07;
                 byte5 = 0x22;
                 if (value === 0) {
                     byte6 = 0x00;
@@ -202,7 +204,9 @@ class MBot {
                     byte6 = 0x26;
                     byte7 = 0x01;
                 }
-                byte8 = 0x0a;
+                byte8 = 0x00;
+                byte9 = 0xfa
+                byte10 = 0x00;
                 byte12 = 0x00;
 
                 break;
