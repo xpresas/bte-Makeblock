@@ -1,12 +1,12 @@
 
 console.log("Started bte.js")
-window.onload = function () {
+window.onload = async function () {
     console.log("window.onload passedd")
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     console.log("Start sleep");
-    sleep(10000);
+    await sleep(10000);
     console.log("10seconds passed");
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
