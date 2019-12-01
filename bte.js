@@ -5,6 +5,13 @@ window.onload = async function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    async function playMusic(mbot) {
+        mBot.processBuzzer("E3half");
+        await sleep(1000);
+        mbot.processBuzzer("E3quarter");
+        await sleep(1000);
+        mbot.processBuzzer("G3quarter");
+    }
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -35,12 +42,8 @@ window.onload = async function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                await music1Btn.addEventListener('click', _ => {
-                    mBot.processBuzzer("E3half");
-                    await sleep(1000);
-                    mbot.processBuzzer("E3quarter");
-                    await sleep(1000);
-                    mbot.processBuzzer("G3quarter");
+                music1Btn.addEventListener('click', _ => {
+                    playMusic(mbot);
                     // sleep(1000),
                     // mBot.processBuzzer("E3quarter"),
                     // sleep(1000),
