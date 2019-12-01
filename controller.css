@@ -1,6 +1,6 @@
 #controller .dpad {
     display: grid;
-    grid-template-areas:". key-a ." ". top ." "left bottom right";
+    grid-template-areas:". key-a ." ". top ." "left bottom right" "key-1 key-2 .";
     grid-gap: 6px;
   }
   
@@ -33,6 +33,9 @@
     grid-area: key-a;
   }
   
-  #controller button[env3d-key^="KEY_Z"] {
-    grid-area: key-z;
+  #controller button[env3d-key^="KEY_1"] {
+    grid-area: key-1;
+  }
+  #controller button[env3d-key^="KEY_2"] {
+    grid-area: key-2;
   }
