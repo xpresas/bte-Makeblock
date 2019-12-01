@@ -5,6 +5,9 @@ window.onload = function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    console.log("Start sleep");
+    sleep(10000);
+    console.log("10seconds passed");
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -36,10 +39,11 @@ window.onload = function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
                 music1Btn.addEventListener('click', _ => {
-                    mBot.processBuzzer("E3half").then(sleep(1000))
-                        .then(mbot.processBuzzer("E3quarter"))
-                        .then(sleep(1000))
-                        .then(mbot.processBuzzer("G3quarter"));
+                    mBot.processBuzzer();
+                    // .then(sleep(1000))
+                    //     .then(mbot.processBuzzer("E3quarter"))
+                    //     .then(sleep(1000))
+                    //     .then(mbot.processBuzzer("G3quarter"));
                     // sleep(1000),
                     // mBot.processBuzzer("E3quarter"),
                     // sleep(1000),
@@ -53,15 +57,15 @@ window.onload = function () {
                     // sleep(1000),
                     // mBot.processBuzzer("B2whole")
                 });
-                music2Btn.addEventListener('click', _ => {
-                    // mBot.processBuzzer("E3half")
-                    // mBot.processBuzzer("E3quarter")
-                    // mBot.processBuzzer("G3quarter")
-                    // mBot.processBuzzer("E3quarter")
-                    // mBot.processBuzzer("D3quarter")
-                    // mBot.processBuzzer("C3whole")
-                    mBot.processBuzzer("C3whole")
-                });
+                // music2Btn.addEventListener('click', _ => {
+                //     // mBot.processBuzzer("E3half")
+                //     // mBot.processBuzzer("E3quarter")
+                //     // mBot.processBuzzer("G3quarter")
+                //     // mBot.processBuzzer("E3quarter")
+                //     // mBot.processBuzzer("D3quarter")
+                //     // mBot.processBuzzer("C3whole")
+                //     mBot.processBuzzer("C3whole")
+                // });
             })
     })
 
