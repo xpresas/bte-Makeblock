@@ -35,7 +35,7 @@ window.onload = async function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                music1Btn.addEventListener('click', _ => {
+                await music1Btn.addEventListener('click', _ => {
                     mBot.processBuzzer("E3half");
                     await sleep(1000);
                     mbot.processBuzzer("E3quarter");
