@@ -241,8 +241,10 @@ class MBot {
         bufView[3] = byte7 << 8 | byte6;
         bufView[4] = byte9 << 8 | byte8;
         bufView[5] = byte11 << 8 | byte10;
-        bufView[6] = byte13 << 8 | byte12;
-        bufView[7] = byte15 << 8 | byte14;
+        console.log("buff view")
+        console.log(bufView)
+        // bufView[6] = byte13 << 8 | byte12;
+        // bufView[7] = byte15 << 8 | byte14;
         console.log(
             byte0.toString(16) + ":" +
             byte1.toString(16) + ":" +
@@ -254,12 +256,12 @@ class MBot {
             byte7.toString(16) + ":" +
             byte8.toString(16) + ":" +
             byte9.toString(16) + ":" +
-            byte10.toString(16) + ":" +
-            byte11.toString(16) + ":" +
-            byte12.toString(16) + ":" +
-            byte13.toString(16) + ":" +
-            byte14.toString(16) + ":" +
-            byte15.toString(16)
+            byte10.toString(16)// + ":" +
+            // byte11.toString(16) + ":" +
+            // byte12.toString(16) + ":" +
+            // byte13.toString(16) + ":" +
+            // byte14.toString(16) + ":" +
+            // byte15.toString(16)
         );
         console.log(
             bufView[0].toString(16) + ":" +
