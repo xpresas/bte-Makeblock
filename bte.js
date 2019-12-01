@@ -5,7 +5,7 @@ window.onload = async function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    async function playMusic(mbot) {
+    async function playMusic() {
         mBot.processBuzzer("E3half");
         await sleep(1000);
         mbot.processBuzzer("E3quarter");
@@ -43,7 +43,7 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
                 music1Btn.addEventListener('click', _ => {
-                    playMusic(mbot);
+                    playMusic();
                     // sleep(1000),
                     // mBot.processBuzzer("E3quarter"),
                     // sleep(1000),
