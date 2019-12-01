@@ -2,6 +2,9 @@
 console.log("Started bte.js")
 window.onload = function () {
     console.log("window.onload passedd")
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -34,11 +37,17 @@ window.onload = function () {
 
                 music1Btn.addEventListener('click', _ => {
                     mBot.processBuzzer("E3half"),
+                        sleep(1000),
                         mBot.processBuzzer("E3quarter"),
+                        sleep(1000),
                         mBot.processBuzzer("G3quarter"),
+                        sleep(1000),
                         mBot.processBuzzer("E3quarter"),
+                        sleep(1000),
                         mBot.processBuzzer("D3quarter"),
+                        sleep(1000),
                         mBot.processBuzzer("C3whole"),
+                        sleep(1000),
                         mBot.processBuzzer("B2whole")
                 });
                 music2Btn.addEventListener('click', _ => {
