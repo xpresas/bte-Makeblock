@@ -13,7 +13,7 @@ window.onload = function () {
                 // Connection is done, we show the controls
                 let connectedCard = document.getElementById("connectedAlert");
                 connectedCard.className = "alert alert-success";
-                alert("connected")
+                document.getElementById("connectBtn").style.display = "none";
 
                 // Control the robot by button
                 let upBtn = document.getElementById("upBtn");

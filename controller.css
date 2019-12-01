@@ -1,0 +1,38 @@
+#controller .dpad {
+    display: grid;
+    grid-template-areas: "key-a key-a . . . top ." " . key-z key-z . left bottom right";
+    grid-gap: 6px;
+  }
+  
+  #controller button {
+    padding-top:20%;
+    padding-bottom: 20%;
+    font-size: 3.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+  
+  #controller button[env3d-key^="KEY_UP"] {
+    grid-area: top;
+  }
+  
+  #controller button[env3d-key^="KEY_LEFT"] {
+    grid-area: left;
+  }
+  
+  #controller button[env3d-key^="KEY_RIGHT"] {
+    grid-area: right;
+  }
+  
+  #controller button[env3d-key^="KEY_DOWN"] {
+    grid-area: bottom;
+  }
+  
+  #controller button[env3d-key^="KEY_A"] {
+    
+  }
+  
+  #controller button[env3d-key^="KEY_Z"] {
+    grid-area: key-z;
+  }
