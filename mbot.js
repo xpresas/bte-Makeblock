@@ -180,35 +180,53 @@ class MBot {
                 //ff:55:07:00:02:22:7b:00:fa:00
                 byte2 = 0x07;
                 byte5 = 0x22;
-                if (value === 0) {
-                    byte6 = 0x00;
+                if (value === "E3half") {
+                    byte6 = 0xa5;
                     byte7 = 0x00;
-                } else if (value === 1) {
-                    byte6 = 0x06;
-                    byte7 = 0x01;
-                } else if (value === 2) {
-                    byte6 = 0xee;
-                    byte7 = 0x01;
-                } else if (value === 3) {
-                    byte6 = 0x88;
-                    byte7 = 0x01;
-                } else if (value === 4) {
-                    byte6 = 0xb8;
-                    byte7 = 0x01;
-                } else if (value === 5) {
-                    byte6 = 0x5d;
-                    byte7 = 0x01;
-                } else if (value === 6) {
-                    byte6 = 0x4a;
-                    byte7 = 0x01;
+                    byte8 = 0xf4;
+                    byte9 = 0x01;
+                } else if (value === "C3whole") {
+                    byte6 = 0x83;
+                    byte7 = 0x00;
+                    byte8 = 0xe8;
+                    byte9 = 0x03;
+                }
+                else if (value === "B2whole") {
+                    byte6 = 0x7b;
+                    byte7 = 0x00;
+                    byte8 = 0xe8;
+                    byte9 = 0x03;
+
+                } else if (value === "E3quarter") {
+                    byte6 = 0xa5;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "G3quarter") {
+                    byte6 = 0xc4;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "D3quarter") {
+                    byte6 = 0x93;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "C3quarter") {
+                    byte6 = 0x83;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
                 } else {
                     byte6 = 0x26;
-                    byte7 = 0x01;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
                 }
-                byte8 = 0x00;
-                byte9 = 0xfa
-                byte10 = 0x00;
-                byte12 = 0x00;
+                // byte8 = 0xf0;
+                // byte9 = 0x00;
+                // byte10 = 0x00;
+                // byte12 = 0x00;
 
                 break;
         }
