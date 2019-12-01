@@ -178,7 +178,11 @@ class MBot {
                 //ff:55:05:00:02:22:26:01:0a
                 // 0  1  2  3  4  5  6  7  8  9
                 //ff:55:07:00:02:22:7b:00:fa:00
+                byte0 = 0xff;
+                byte1 = 0x55;
                 byte2 = 0x07;
+                byte3 = 0x00;
+                byte4 = 0x02;
                 byte5 = 0x22;
                 if (value === "E3half") {
                     byte6 = 0xa5;
@@ -255,7 +259,7 @@ class MBot {
             byte12.toString(16) + ":" +
             byte13.toString(16) + ":" +
             byte14.toString(16) + ":" +
-            byte15.toString(16) + ":"
+            byte15.toString(16)
         );
         console.log(
             bufView[0].toString(16) + ":" +
