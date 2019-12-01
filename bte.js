@@ -1,7 +1,7 @@
 
 console.log("Started bte.js")
 window.onload = function () {
-    console.log("window.onload passed")
+    console.log("window.onload passedd")
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -31,7 +31,7 @@ window.onload = function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                musicBtn.addEventListener('touchstart'), _ => { mBot.processBuzzer() }
+                musicBtn.addEventListener('click', _ => { mBot.processBuzzer() });
             })
     })
 
