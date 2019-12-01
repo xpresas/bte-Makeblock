@@ -87,6 +87,7 @@ class MBot {
 
     processBuzzer() {
         this.buzzerIndex = (this.buzzerIndex + 1) % 8;
+        alert('PORT_4');
         return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_4, 22, this.buzzerIndex))
             .catch(error => {
                 console.error(error);
