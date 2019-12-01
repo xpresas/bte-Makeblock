@@ -5,9 +5,6 @@ window.onload = async function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    console.log("Start sleep");
-    await sleep(10000);
-    console.log("10seconds passed");
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -39,11 +36,11 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
                 music1Btn.addEventListener('click', _ => {
-                    mBot.processBuzzer();
-                    // .then(sleep(1000))
-                    //     .then(mbot.processBuzzer("E3quarter"))
-                    //     .then(sleep(1000))
-                    //     .then(mbot.processBuzzer("G3quarter"));
+                    mBot.processBuzzer("E3half")
+                        .then(sleep(1000))
+                        .then(mbot.processBuzzer("E3quarter"))
+                        .then(sleep(1000))
+                        .then(mbot.processBuzzer("G3quarter"));
                     // sleep(1000),
                     // mBot.processBuzzer("E3quarter"),
                     // sleep(1000),
