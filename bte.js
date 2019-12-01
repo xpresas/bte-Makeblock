@@ -20,6 +20,7 @@ window.onload = function () {
                 let downBtn = document.getElementById('downBtn');
                 let leftBtn = document.getElementById('leftBtn');
                 let rightBtn = document.getElementById('rightBtn');
+                let musicBtn = document.getElementById('musicBtn');
                 upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-250, 250) });
                 downBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, -250) });
                 leftBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, 250) });
@@ -29,6 +30,8 @@ window.onload = function () {
                 downBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
+
+                musicBtn.addEventListener('click'), _ => { mBot.processBuzzer(4), mBot.processBuzzer(2) }
             })
     })
 
