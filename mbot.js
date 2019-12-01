@@ -88,7 +88,7 @@ class MBot {
     processBuzzer(note) {
         console.log("Port2");
         this.buzzerIndex = (this.buzzerIndex + 1) % 8;
-        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, note))
+        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, "C3whole"))
             .catch(error => {
                 console.error(error);
             });
@@ -234,23 +234,15 @@ class MBot {
         }
 
 
-        bufView[0] = byte0 << 8;
-        bufView[1] = byte1 << 8;
-        bufView[2] = byte2 << 8;
-        bufView[3] = byte3 << 8;
-        bufView[4] = byte4 << 8;
-        bufView[5] = byte6 << 8;
-        bufView[7] = byte7 << 8;
-        bufView[8] = byte8 << 8;
-        bufView[9] = byte9 << 8;
-        // bufView[0] = byte1 << 8 | byte0;
-        // bufView[1] = byte3 << 8 | byte2;
-        // bufView[2] = byte5 << 8 | byte4;
-        // bufView[3] = byte7 << 8 | byte6;
-        // bufView[4] = byte9 << 8 | byte8;
-        // bufView[5] = byte11 << 8 | byte10;
-        // bufView[6] = byte13 << 8 | byte12;
-        // bufView[7] = byte15 << 8 | byte14;
+
+        bufView[0] = byte1 << 8 | byte0;
+        bufView[1] = byte3 << 8 | byte2;
+        bufView[2] = byte5 << 8 | byte4;
+        bufView[3] = byte7 << 8 | byte6;
+        bufView[4] = byte9 << 8 | byte8;
+        bufView[5] = byte11 << 8 | byte10;
+        bufView[6] = byte13 << 8 | byte12;
+        bufView[7] = byte15 << 8 | byte14;
         console.log(
             byte0.toString(16) + ":" +
             byte1.toString(16) + ":" +
