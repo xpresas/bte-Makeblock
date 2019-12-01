@@ -5,13 +5,7 @@ window.onload = async function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    async function playMusic() {
-        mBot.processBuzzer("E3half");
-        await sleep(1000);
-        mbot.processBuzzer("E3quarter");
-        await sleep(1000);
-        mbot.processBuzzer("G3quarter");
-    }
+
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -20,6 +14,14 @@ window.onload = async function () {
                 return mBot.connect();
             })
             .then(_ => {
+                var rangeslider = document.getElementById("sliderRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = rangeslider.value;
+
+                rangeslider.oninput = function () {
+                    output.innerHTML = this.value;
+                }
+
                 // Connection is done, we show the controls
                 let connectedCard = document.getElementById("connectedAlert");
                 connectedCard.className = "alert alert-success";
@@ -32,7 +34,7 @@ window.onload = async function () {
                 let rightBtn = document.getElementById('rightBtn');
                 let music1Btn = document.getElementById('music1Btn');
                 let music2Btn = document.getElementById('music2Btn');
-                upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-250, 250) });
+                upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-rangeslider.value, rangeslider.value) });
                 downBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, -250) });
                 leftBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, 250) });
                 rightBtn.addEventListener('touchstart', _ => { mBot.processMotor(-250, -250) });
