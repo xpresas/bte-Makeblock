@@ -20,7 +20,8 @@ window.onload = function () {
                 let downBtn = document.getElementById('downBtn');
                 let leftBtn = document.getElementById('leftBtn');
                 let rightBtn = document.getElementById('rightBtn');
-                let musicBtn = document.getElementById('musicBtn');
+                let music1Btn = document.getElementById('music1Btn');
+                let music2Btn = document.getElementById('music2Btn');
                 upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-250, 250) });
                 downBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, -250) });
                 leftBtn.addEventListener('touchstart', _ => { mBot.processMotor(250, 250) });
@@ -31,7 +32,7 @@ window.onload = function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                musicBtn.addEventListener('click', _ => {
+                music1Btn.addEventListener('click', _ => {
                     // mBot.processBuzzer("E3half")
                     // mBot.processBuzzer("E3quarter")
                     // mBot.processBuzzer("G3quarter")
@@ -39,6 +40,15 @@ window.onload = function () {
                     // mBot.processBuzzer("D3quarter")
                     // mBot.processBuzzer("C3whole")
                     mBot.processBuzzer("B2whole")
+                });
+                music2Btn.addEventListener('click', _ => {
+                    // mBot.processBuzzer("E3half")
+                    // mBot.processBuzzer("E3quarter")
+                    // mBot.processBuzzer("G3quarter")
+                    // mBot.processBuzzer("E3quarter")
+                    // mBot.processBuzzer("D3quarter")
+                    // mBot.processBuzzer("C3whole")
+                    mBot.processBuzzer("C3whole")
                 });
             })
     })
