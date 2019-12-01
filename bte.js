@@ -44,21 +44,21 @@ window.onload = async function () {
                 leftBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
 
-                music1Btn.addEventListener('click', _ => {
-                    playMusic();
-                    // sleep(1000),
-                    // mBot.processBuzzer("E3quarter"),
-                    // sleep(1000),
-                    // mBot.processBuzzer("G3quarter"),
-                    // sleep(1000),
-                    // mBot.processBuzzer("E3quarter"),
-                    // sleep(1000),
-                    // mBot.processBuzzer("D3quarter"),
-                    // sleep(1000),
-                    // mBot.processBuzzer("C3whole"),
-                    // sleep(1000),
-                    // mBot.processBuzzer("B2whole")
-                });
+                // music1Btn.addEventListener('click', _ => {
+
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("E3quarter"),
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("G3quarter"),
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("E3quarter"),
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("D3quarter"),
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("C3whole"),
+                //     // sleep(1000),
+                //     // mBot.processBuzzer("B2whole")
+                // });
                 // music2Btn.addEventListener('click', _ => {
                 //     // mBot.processBuzzer("E3half")
                 //     // mBot.processBuzzer("E3quarter")
