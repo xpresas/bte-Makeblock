@@ -242,7 +242,7 @@ class MBot {
         bufView[4] = byte9 << 8 | byte8;
         bufView[5] = byte11 << 8 | byte10;
         console.log("buff view")
-        console.log(bufView)
+        console.log(buf)
         // bufView[6] = byte13 << 8 | byte12;
         // bufView[7] = byte15 << 8 | byte14;
         console.log(
