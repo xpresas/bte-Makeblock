@@ -181,9 +181,9 @@ class MBot {
                 } else {
                     byte8 = 0x00;
                 }
-                byte9 = value >> 8 & 0xff;
-                byte10 = value >> 16 & 0xff;
-                byte11 = value >> 24 & 0xff;
+                byte9 = 0xff
+                byte10 = 0xff;
+                byte11 = 0x00;
                 break;
             case TYPE_SOUND:
                 //ff:55:05:00:02:22:00:00:0a
