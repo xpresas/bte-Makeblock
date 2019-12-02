@@ -99,8 +99,8 @@ class MBot {
         let gHex = green << 16;
         let bHex = blue << 24;
         let value = rHex | gHex | bHex;
-        //let colors = { "r": red, "g": green, "b": blue }
-        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, 0, led, value));
+        let colors = { "r": red, "g": green, "b": blue };
+        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, 0, led, colors));
 
     }
 
@@ -181,9 +181,9 @@ class MBot {
                 } else {
                     byte8 = 0x00;
                 }
-                byte9 = 0x00
-                byte10 = '0xff';
-                byte11 = '0xff';
+                byte9 = '0x' + value.r.toString(16);
+                byte10 = '0x' + value.g.toString(16);
+                byte11 = '0x' + value.b.toString(16);
                 break;
             case TYPE_SOUND:
                 //ff:55:05:00:02:22:00:00:0a
