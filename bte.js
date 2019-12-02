@@ -58,17 +58,15 @@ window.onload = async function () {
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
                     mBot.processColor(2, r, g, b);
-                    ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
+
                 });
                 ledRight.addEventListener('touchstart', _ => {
                     mBot.processColor(1, r, g, b);
-                    ledRight.style.backgroundColor = document.getElementById("hex").innerText;
+
                 });
                 ledBoth.addEventListener('touchstart', _ => {
                     mBot.processColor(0, r, g, b);
-                    ledBoth.style.backgroundColor = document.getElementById("hex").innerText;
-                    ledRight.style.backgroundColor = document.getElementById("hex").innerText;
-                    ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
+
                 });
 
                 // music1Btn.addEventListener('click', _ => {
