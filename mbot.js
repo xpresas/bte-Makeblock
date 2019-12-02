@@ -76,9 +76,9 @@ class MBot {
      * Control the motors of robot
     */
     processMotor(valueM1, valueM2) {
-        return this._writeCharacteristic(this._genericControl(TYPE_MOTOR, M_1, 0, valueM1))
+        return this._writeCharacteristic(this._genericControl(TYPE_MOTOR, M_1, 0, 0, valueM1))
             .then(() => {
-                return this._writeCharacteristic(this._genericControl(TYPE_MOTOR, M_2, 0, valueM2));
+                return this._writeCharacteristic(this._genericControl(TYPE_MOTOR, M_2, 0, 0, valueM2));
             }).catch(error => {
                 console.error(error);
             });
@@ -88,18 +88,18 @@ class MBot {
     processBuzzer(note) {
         console.log("Port2");
         this.buzzerIndex = (this.buzzerIndex + 1) % 8;
-        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, note))
+        return this._writeCharacteristic(this._genericControl(TYPE_SOUND, PORT_2, 22, 0, note))
             .catch(error => {
                 console.error(error);
             });
     }
 
-    processColor(red, blue, green) {
+    processColor(led, red, blue, green) {
         let rHex = red << 8;
         let gHex = green << 16;
         let bHex = blue << 24;
         let value = rHex | gHex | bHex;
-        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, 0, value));
+        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, led, value));
 
     }
 
@@ -116,7 +116,7 @@ class MBot {
     }
 
 
-    _genericControl(type, port, slot, value) {
+    _genericControl(type, port, slot, led, value) {
         /*
         ff 55 len idx action device port  slot  data a
         0  1  2   3   4      5      6     7     8
@@ -159,10 +159,25 @@ class MBot {
 
                 break;
             case TYPE_RGB:
-                // ff:55  09:00  02:08  06:00  5c:99  6d:00  0a
-                // ff:55  09:00  02:08  07:02  00:0a  00:00
-                // 0x55ff;0x0009;0x0802;0x0006;0x995c;0x006d;0x000a;0x0000;
-                byte7 = 0x00;
+
+                // 0  1  2  3  4  5  6  7 LED R  G  B     
+                //ff 55 09 00 02 08 07 02 00 00 00 00
+                byte0 = 0xff;
+                byte1 = 0x55;
+                byte2 = 0x09;
+                byte3 = 0x00;
+                byte4 = 0x02;
+                byte5 = 0x08;
+                byte6 = 0x07;
+                if (led == 0) {
+                    byte7 = 0x00;
+                } else if (led == 1) {
+                    byte7 = 0x01;
+                } else if (led == 2) {
+                    byte7 = 0x02;
+                } else {
+                    byte7 = 0x00;
+                }
                 byte8 = value >> 8 & 0xff;
                 byte9 = value >> 16 & 0xff;
                 byte10 = value >> 24 & 0xff;

@@ -16,7 +16,7 @@
 <body>
 
     <div id="connectedAlert" class="alert alert-danger" role="alert">
-        Connected
+        Not connected!
     </div>
     <div id="controller">
         <div class="dpad">
@@ -25,21 +25,44 @@
             <button id="rightBtn" env3d-key="KEY_RIGHT" type="button" class="btn btn-success">RIGHT</button>
             <button id="downBtn" env3d-key="KEY_DOWN" type="button" class="btn btn-success">DOWN</button>
             <button id="connectBtn" env3d-key="KEY_A" class="btn btn-primary">Connect</button>
-            <button id="music1Btn" env3d-key="KEY_1" type="button" class="btn btn-danger">Music1</button>
-            <button id="music2Btn" env3d-key="KEY_2" type="button" class="btn btn-danger">Music2</button>
+            <button id="LEDLeft" env3d-key="KEY_1" type="button" class="btn btn-danger">LED Left</button>
+            <button id="LEDBoth" env3d-key="KEY_2" type="button" class="btn btn-danger">LED Both</button>
+            <button id="LEDRight" env3d-key="KEY_3" type="button" class="btn btn-danger">LED Right</button>
         </div>
         <div class="rangeslider" style="margin-top:10px">
             <input type="range" min="40" max="255" value="100" class="myslider" id="sliderRange">
             <p>SPEED:(255 max) <span id="speedInfo"></span></p>
         </div>
+        <div class="rgbContainer">
+            <link rel="stylesheet" href="colorpicker.css">
+            <fieldset>
+                <label for="r">R</label>
+                <input type="range" min="0" max="255" id="r" step="1" value="0">
+                <output for="r" id="r_out">0</output>
+            </fieldset>
 
+            <fieldset>
+                <label for="g">G</label>
+                <input type="range" min="0" max="255" id="g" step="1" value="0">
+                <output for="g" id="g_out">0</output>
+            </fieldset>
+
+            <fieldset>
+                <label for="b">B</label>
+                <input type="range" min="0" max="255" id="b" step="1" value="0">
+                <output for="b" id="b_out">0</output>
+            </fieldset>
+
+            <output id="hex">#000000</output>
+        </div>
     </div>
 
 
 
 
 </body>
-<script src="mbot.js"></script>
+<script type="text/javascript" src="mbot.js"></script>
 <script type="text/javascript" src="bte.js"></script>
+<script type="text/javascript" src="colorpicker.js"></script>
 
 </html>

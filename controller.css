@@ -1,6 +1,6 @@
 #controller .dpad {
     display: grid;
-    grid-template-areas:". key-a ." ". top ." "left bottom right" "key-1 key-2 .";
+    grid-template-areas:". key-a ." ". top ." "left bottom right" "key-1 key-2 key-3";
     grid-gap: 6px;
   }
   
@@ -39,6 +39,10 @@
   #controller button[env3d-key^="KEY_2"] {
     grid-area: key-2;
   }
+  #controller button[env3d-key^="KEY_3"] {
+    grid-area: key-3;
+  }
+  
   .rangeslider{
     width: 5vh;
     height: 50px;
