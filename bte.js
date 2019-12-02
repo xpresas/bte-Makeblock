@@ -52,23 +52,23 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out');
-                    g = document.getElementById('g_out');
-                    b = document.getElementById('b_out');
+                    r = document.getElementById('r_out').innerText;
+                    g = document.getElementById('g_out').innerText;
+                    b = document.getElementById('b_out').innerText;
                     mBot.processColor(2, r, g, b);
                     ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
                 });
                 ledRight.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out');
-                    g = document.getElementById('g_out');
-                    b = document.getElementById('b_out');
+                    r = document.getElementById('r_out').innerText;
+                    g = document.getElementById('g_out').innerText;
+                    b = document.getElementById('b_out').innerText;
                     mBot.processColor(1, r, g, b);
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
                 });
                 ledBoth.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out');
-                    g = document.getElementById('g_out');
-                    b = document.getElementById('b_out');
+                    r = document.getElementById('r_out').innerText;
+                    g = document.getElementById('g_out').innerText;
+                    b = document.getElementById('b_out').innerText;
                     mBot.processColor(0, r, g, b);
                     ledBoth.style.backgroundColor = document.getElementById("hex").innerText;
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
