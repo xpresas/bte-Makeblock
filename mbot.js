@@ -181,7 +181,8 @@ class MBot {
                 } else {
                     byte8 = 0x00;
                 }
-                console.log(value);
+                console.log("OPA")
+                console.log(value.r);
                 byte9 = '0x' + value.r.toString(16);
                 byte10 = '0x' + value.g.toString(16);
                 byte11 = '0x' + value.b.toString(16);
@@ -294,7 +295,6 @@ class MBot {
     }
 
     _writeCharacteristic(value) {
-        console.log("This is what is written:" + value)
         return this.device.gatt.getPrimaryService(this.config.service())
             .then(service => service.getCharacteristic(this.config.charateristic()))
             .then(characteristic => characteristic.writeValue(value));
