@@ -29,12 +29,13 @@
             <button id="LEDLeft" env3d-key="KEY_1" type="button" class="btn btn-danger">LED Left</button>
             <button id="LEDBoth" env3d-key="KEY_2" type="button" class="btn btn-danger">LED Both</button>
             <button id="LEDRight" env3d-key="KEY_3" type="button" class="btn btn-danger">LED Right</button>
+            <button id="pianoBtn" env3d-key="KEY_4" type="button" class="btn btn-dark">Piano?</button>
         </div>
         <div class="rangeslider" style="margin-top:10px">
             <input type="range" min="40" max="255" value="100" class="myslider" id="sliderRange">
 
         </div>
-        <div id="rgbContainer" style="padding-top:20px">
+        <div id="rgbContainer" style="padding-top:20px;padding-bottom: 20px;">
             <link rel="stylesheet" href="colorpicker.css">
             <fieldset>
                 <label for="r">R</label>
@@ -55,6 +56,15 @@
             </fieldset>
 
             <output id="hex">#000000</output>
+        </div>
+        <div class="piano" id="pianoDiv">
+            <button id="noteA" env3d-key="p1" type="button" class="btn ">A</button>
+            <button id="noteB" env3d-key="p2" type="button" class="btn ">B</button>
+            <button id="noteC" env3d-key="p3" type="button" class="btn ">C</button>
+            <button id="noteB" env3d-key="p4" type="button" class="btn ">D</button>
+            <button id="noteD" env3d-key="p5" type="button" class="btn ">E</button>
+            <button id="noteE" env3d-key="p6" type="button" class="btn ">F</button>
+            <button id="noteF" env3d-key="p7" type="button" class="btn ">G</button>
         </div>
     </div>
 

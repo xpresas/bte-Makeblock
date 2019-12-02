@@ -224,13 +224,18 @@ class MBot {
                     byte8 = 0xe8;
                     byte9 = 0x03;
 
-                } else if (value === "E3quarter") {
-                    byte6 = 0xa5;
+                } else if (value === "A2quarter") {
+                    byte6 = 0x6e;
                     byte7 = 0x00;
                     byte8 = 0xfa;
                     byte9 = 0x00;
-                } else if (value === "G3quarter") {
-                    byte6 = 0xc4;
+                } else if (value === "B2quarter") {
+                    byte6 = 0x7b;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "C3quarter") {
+                    byte6 = 0x83;
                     byte7 = 0x00;
                     byte8 = 0xfa;
                     byte9 = 0x00;
@@ -239,8 +244,18 @@ class MBot {
                     byte7 = 0x00;
                     byte8 = 0xfa;
                     byte9 = 0x00;
-                } else if (value === "C3quarter") {
-                    byte6 = 0x83;
+                } else if (value === "E3quarter") {
+                    byte6 = 0xa5;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "F3quarter") {
+                    byte6 = 0xaf;
+                    byte7 = 0x00;
+                    byte8 = 0xfa;
+                    byte9 = 0x00;
+                } else if (value === "G3quarter") {
+                    byte6 = 0xc4;
                     byte7 = 0x00;
                     byte8 = 0xfa;
                     byte9 = 0x00;

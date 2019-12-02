@@ -1,11 +1,15 @@
 
 console.log("Started bte.js")
-window.onload = async function () {
-    console.log("window.onload passedd")
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+function pianoToggle() {
+    var pianoDiv = document.getElementById("pianoDiv");
+    if (pianoDiv.style.display === "none") {
+        pianoDiv.style.display = "grid";
+    } else {
+        pianoDiv.style.display = "none";
     }
-
+}
+document.getElementById("pianoBtn").addEventListener('click', _ => pianoToggle());
+window.onload = async function () {
     document.getElementById("connectBtn").addEventListener('click', _ => {
         // Request the device
         mBot.request()
@@ -14,6 +18,8 @@ window.onload = async function () {
                 return mBot.connect();
             })
             .then(_ => {
+
+
                 //speed slider
                 var rangeslider = document.getElementById("sliderRange");
                 var output = document.getElementById("speedInfo");
@@ -45,6 +51,15 @@ window.onload = async function () {
                 let ledLeft = document.getElementById('LEDLeft');
                 let ledRight = document.getElementById('LEDRight');
                 let ledBoth = document.getElementById('LEDBoth');
+                //MusicButtons
+                let noteA = document.getElementById("noteA");
+                let noteB = document.getElementById('noteB');
+                let noteC = document.getElementById('noteC');
+                let noteD = document.getElementById('noteD');
+                let noteE = document.getElementById("noteE");
+                let noteF = document.getElementById('noteF');
+                let noteG = document.getElementById('noteG');
+
                 //Move events that send movements to the robot
                 upBtn.addEventListener('touchstart', _ => { mBot.processMotor(-rangeslider.value, rangeslider.value) });
                 downBtn.addEventListener('touchstart', _ => { mBot.processMotor(rangeslider.value, -rangeslider.value) });
@@ -71,31 +86,29 @@ window.onload = async function () {
                     mBot.processColor(0, r.value, g.value, b.value);
                     ledBoth.style.backgroundColor = hex;
                 });
+                //note requests
+                noteA.addEventListener('click', _ => {
+                    mBot.processBuzzer("A2quarter");
+                });
+                noteB.addEventListener('click', _ => {
+                    mBot.processBuzzer("B2quarter");
+                });
+                noteC.addEventListener('click', _ => {
+                    mBot.processBuzzer("C3quarter");
+                });
+                noteD.addEventListener('click', _ => {
+                    mBot.processBuzzer("D3quarter");
+                });
+                noteE.addEventListener('click', _ => {
+                    mBot.processBuzzer("E3quarter");
+                });
+                noteF.addEventListener('click', _ => {
+                    mBot.processBuzzer("F3quarter");
+                });
+                noteG.addEventListener('click', _ => {
+                    mBot.processBuzzer("G3quarter");
+                });
 
-                // music1Btn.addEventListener('click', _ => {
-
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("E3quarter"),
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("G3quarter"),
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("E3quarter"),
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("D3quarter"),
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("C3whole"),
-                //     // sleep(1000),
-                //     // mBot.processBuzzer("B2whole")
-                // });
-                // music2Btn.addEventListener('click', _ => {
-                //     // mBot.processBuzzer("E3half")
-                //     // mBot.processBuzzer("E3quarter")
-                //     // mBot.processBuzzer("G3quarter")
-                //     // mBot.processBuzzer("E3quarter")
-                //     // mBot.processBuzzer("D3quarter")
-                //     // mBot.processBuzzer("C3whole")
-                //     mBot.processBuzzer("C3whole")
-                // });
             })
     })
 

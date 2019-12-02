@@ -1,9 +1,31 @@
+.piano{
+  display: grid;
+  grid-template-areas: "p1 p2 p3 p4 p5 p6 p7";
+  grid-gap:5px;
+}
+.piano button{
+  height:7em;
+  width:4em;
+  z-index:1;
+  border-left:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:0 0 5px 5px;
+  box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#eee 0%,#fff 100%);
+  color:black;
+}
+.piano button:active{
+  color: #fff;
+    background-color: black;
+    border-color:blue;
+}
+
 #controller{
   background-color: black;
 }
 #controller .dpad {
     display: grid;
-    grid-template-areas:". key-a ." "speedText top ." "left bottom right" "key-1 key-2 key-3";
+    grid-template-areas:". key-a ." "speedText top key-4" "left bottom right" "key-1 key-2 key-3";
     grid-gap: 6px;
   }
   
@@ -46,6 +68,30 @@
   }
   #controller button[env3d-key^="KEY_3"] {
     grid-area: key-3;
+  }
+  #controller button[env3d-key^="KEY_4"] {
+    grid-area: key-4;
+  }
+  #controller button[env3d-key^="p1"] {
+    grid-area: p1;
+  }
+  #controller button[env3d-key^="p2"] {
+    grid-area: p2;
+  }
+  #controller button[env3d-key^="p3"] {
+    grid-area: p3;
+  }
+  #controller button[env3d-key^="p4"] {
+    grid-area: p4;
+  }
+  #controller button[env3d-key^="p5"] {
+    grid-area: p5;
+  }
+  #controller button[env3d-key^="p6"] {
+    grid-area: p6;
+  }
+  #controller button[env3d-key^="p7"] {
+    grid-area: p7;
   }
   #controller [env3d-key^="speedText"] {
     color:white;
