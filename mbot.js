@@ -99,8 +99,8 @@ class MBot {
         let gHex = green << 16;
         let bHex = blue << 24;
         let value = rHex | gHex | bHex;
-        colors = { "r": red, "g": green, "b": blue }
-        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, led, colors));
+        //let colors = { "r": red, "g": green, "b": blue }
+        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, led, 123));
 
     }
 
