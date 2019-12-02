@@ -181,6 +181,7 @@ class MBot {
                 } else {
                     byte8 = 0x00;
                 }
+                console.log(value);
                 byte9 = '0x' + value.r.toString(16);
                 byte10 = '0x' + value.g.toString(16);
                 byte11 = '0x' + value.b.toString(16);
