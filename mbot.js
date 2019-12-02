@@ -100,7 +100,7 @@ class MBot {
         let bHex = blue << 24;
         let value = rHex | gHex | bHex;
         let colors = { "r": red, "g": green, "b": blue };
-        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, 0, led, colors));
+        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, 0, led, value));
 
     }
 
@@ -183,9 +183,12 @@ class MBot {
                 }
                 console.log("OPA")
                 console.log(value.r);
-                byte9 = '0x' + value.r.toString(16);
-                byte10 = '0x' + value.g.toString(16);
-                byte11 = '0x' + value.b.toString(16);
+                // byte9 = '0x' + value.r.toString(16);
+                // byte10 = '0x' + value.g.toString(16);
+                // byte11 = '0x' + value.b.toString(16);
+                byte9 = value >> 8 & 0xff;
+                byte10 = value >> 16 & 0xff;
+                byte11 = value >> 24 & 0xff;
                 break;
             case TYPE_SOUND:
                 //ff:55:05:00:02:22:00:00:0a
