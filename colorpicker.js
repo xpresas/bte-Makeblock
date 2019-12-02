@@ -12,7 +12,7 @@ function setColor() {
         g_hex = parseInt(g.value, 10).toString(16),
         b_hex = parseInt(b.value, 10).toString(16),
         hex = "#" + pad(r_hex) + pad(g_hex) + pad(b_hex);
-    body.style.backgroundColor = hex;
+    document.getElementById('rgbContainer').style.backgroundColor = hex;
     hex_out.value = hex;
 }
 

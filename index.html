@@ -20,6 +20,7 @@
     </div>
     <div id="controller">
         <div class="dpad">
+            <p env3d-key="speedText">SPEED: <span id="speedInfo"></span></p>
             <button id="upBtn" env3d-key="KEY_UP" type="button" class="btn btn-success">UP</button>
             <button id="leftBtn" env3d-key="KEY_LEFT" type="button" class="btn btn-success">LEFT</button>
             <button id="rightBtn" env3d-key="KEY_RIGHT" type="button" class="btn btn-success">RIGHT</button>
@@ -31,9 +32,9 @@
         </div>
         <div class="rangeslider" style="margin-top:10px">
             <input type="range" min="40" max="255" value="100" class="myslider" id="sliderRange">
-            <p>SPEED:(255 max) <span id="speedInfo"></span></p>
+
         </div>
-        <div class="rgbContainer">
+        <div id="rgbContainer" style="padding-top:20px">
             <link rel="stylesheet" href="colorpicker.css">
             <fieldset>
                 <label for="r">R</label>

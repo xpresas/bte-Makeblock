@@ -1,6 +1,9 @@
+#controller{
+  background-color: black;
+}
 #controller .dpad {
     display: grid;
-    grid-template-areas:". key-a ." ". top ." "left bottom right" "key-1 key-2 key-3";
+    grid-template-areas:". key-a ." "speedText top ." "left bottom right" "key-1 key-2 key-3";
     grid-gap: 6px;
   }
   
@@ -12,7 +15,9 @@
     align-items: center;
     justify-content: center;  
   }
-  
+  #controller p{
+    color:white;
+  }
   #controller button[env3d-key^="KEY_UP"] {
     grid-area: top;
   }
@@ -42,6 +47,11 @@
   #controller button[env3d-key^="KEY_3"] {
     grid-area: key-3;
   }
+  #controller [env3d-key^="speedText"] {
+    color:white;
+    grid-area: speedText;
+  }
+
   
   .rangeslider{
     width: 5vh;

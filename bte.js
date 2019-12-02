@@ -26,7 +26,7 @@ window.onload = async function () {
                 var r = document.getElementById('r');
                 var g = document.getElementById('g');
                 var b = document.getElementById('b');
-                var hex = document.getElementById('hex').innerText;
+
                 // Connection is done, we change the card
                 let connectedCard = document.getElementById("connectedAlert");
                 connectedCard.className = "alert alert-success";
@@ -57,14 +57,17 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
+                    var hex = document.getElementById('hex').innerText;
                     mBot.processColor(2, r.value, g.value, b.value);
                     ledLeft.style.backgroundColor = hex;
                 });
                 ledRight.addEventListener('touchstart', _ => {
+                    var hex = document.getElementById('hex').innerText;
                     mBot.processColor(1, r.value, g.value, b.value);
                     ledRight.style.backgroundColor = hex;
                 });
                 ledBoth.addEventListener('touchstart', _ => {
+                    var hex = document.getElementById('hex').innerText;
                     mBot.processColor(0, r.value, g.value, b.value);
                     ledBoth.style.backgroundColor = hex;
                 });
