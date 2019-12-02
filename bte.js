@@ -52,9 +52,9 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out').innerText;
-                    g = document.getElementById('g_out').innerText;
-                    b = document.getElementById('b_out').innerText;
+                    r = document.getElementById('sliderRange').innerText;
+                    g = document.getElementById('sliderRange').innerText;
+                    b = document.getElementById('sliderRange').innerText;
                     mBot.processColor(2, r, g, b);
                     ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
                 });
