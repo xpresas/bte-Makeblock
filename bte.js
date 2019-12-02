@@ -58,6 +58,7 @@ window.onload = async function () {
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
                     mBot.processColor(2, r.value, g.value, b.value);
+                    ledLeft.style.backgroundColor = "#" + (r.value).toString(16) + (g.value).toString(16) + (b.value).toString(16);
 
                 });
                 ledRight.addEventListener('touchstart', _ => {
