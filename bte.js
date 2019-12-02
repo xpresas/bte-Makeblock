@@ -57,14 +57,14 @@ window.onload = async function () {
                     b = document.getElementById('b_out');
                     mBot.processColor(2, r, g, b);
                     ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
-                })
+                });
                 ledRight.addEventListener('touchstart', _ => {
                     r = document.getElementById('r_out');
                     g = document.getElementById('g_out');
                     b = document.getElementById('b_out');
                     mBot.processColor(1, r, g, b);
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
-                })
+                });
                 ledBoth.addEventListener('touchstart', _ => {
                     r = document.getElementById('r_out');
                     g = document.getElementById('g_out');
@@ -73,7 +73,7 @@ window.onload = async function () {
                     ledBoth.style.backgroundColor = document.getElementById("hex").innerText;
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
                     ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
-                })
+                });
 
                 // music1Btn.addEventListener('click', _ => {
 

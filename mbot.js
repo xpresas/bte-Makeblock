@@ -94,12 +94,13 @@ class MBot {
             });
     }
 
-    processColor(led, red, blue, green) {
+    processColor(led, red, green, blue) {
         let rHex = red << 8;
         let gHex = green << 16;
         let bHex = blue << 24;
         let value = rHex | gHex | bHex;
-        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, led, value));
+        colors = { "r": red, "g": green, "b": blue }
+        this._writeCharacteristic(this._genericControl(TYPE_RGB, PORT_6, led, colors));
 
     }
 
@@ -178,9 +179,9 @@ class MBot {
                 } else {
                     byte7 = 0x00;
                 }
-                byte8 = value >> 8 & 0xff;
-                byte9 = value >> 16 & 0xff;
-                byte10 = value >> 24 & 0xff;
+                byte8 = 0xff;
+                byte9 = 0x00;
+                byte10 = 0xff;
                 break;
             case TYPE_SOUND:
                 //ff:55:05:00:02:22:00:00:0a
