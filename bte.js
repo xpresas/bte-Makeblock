@@ -23,9 +23,9 @@ window.onload = async function () {
                     output.innerHTML = this.value;
                 }
                 //color sliders
-                r = document.getElementById('r').value;
-                g = document.getElementById('g').value;
-                b = document.getElementById('b').value;
+                var r = document.getElementById('r').value;
+                var g = document.getElementById('g').value;
+                var b = document.getElementById('b').value;
 
                 // Connection is done, we change the card
                 let connectedCard = document.getElementById("connectedAlert");
