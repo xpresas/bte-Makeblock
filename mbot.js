@@ -163,6 +163,7 @@ class MBot {
 
                 // 0  1  2  3  4  5  6  7 LED R  G  B     
                 //ff 55 09 00 02 08 07 02 00 00 00 00
+                //ff 55 09 00 02 08 07 02 00 ff ff ff
                 byte0 = 0xff;
                 byte1 = 0x55;
                 byte2 = 0x09;
@@ -170,18 +171,19 @@ class MBot {
                 byte4 = 0x02;
                 byte5 = 0x08;
                 byte6 = 0x07;
+                byte7 = 0x02;
                 if (led == 0) {
-                    byte7 = 0x00;
+                    byte8 = 0x00;
                 } else if (led == 1) {
-                    byte7 = 0x01;
+                    byte8 = 0x01;
                 } else if (led == 2) {
-                    byte7 = 0x02;
+                    byte8 = 0x02;
                 } else {
-                    byte7 = 0x00;
+                    byte8 = 0x00;
                 }
-                byte8 = 0xff;
-                byte9 = 0x00;
-                byte10 = 0xff;
+                byte9 = 0xff;
+                byte10 = 0x00;
+                byte11 = 0xff;
                 break;
             case TYPE_SOUND:
                 //ff:55:05:00:02:22:00:00:0a
