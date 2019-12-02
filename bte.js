@@ -14,6 +14,7 @@ window.onload = async function () {
                 return mBot.connect();
             })
             .then(_ => {
+                //speed slider
                 var rangeslider = document.getElementById("sliderRange");
                 var output = document.getElementById("speedInfo");
                 output.innerHTML = rangeslider.value;
@@ -21,6 +22,10 @@ window.onload = async function () {
                 rangeslider.oninput = function () {
                     output.innerHTML = this.value;
                 }
+                //color sliders
+                r = document.getElementById('r').value;
+                g = document.getElementById('g').value;
+                b = document.getElementById('b').value;
 
                 // Connection is done, we change the card
                 let connectedCard = document.getElementById("connectedAlert");
@@ -52,23 +57,14 @@ window.onload = async function () {
                 rightBtn.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
                 //Color events that change LED colors on the robot
                 ledLeft.addEventListener('touchstart', _ => {
-                    r = document.getElementById('sliderRange').innerText;
-                    g = document.getElementById('sliderRange').innerText;
-                    b = document.getElementById('sliderRange').innerText;
                     mBot.processColor(2, r, g, b);
                     ledLeft.style.backgroundColor = document.getElementById("hex").innerText;
                 });
                 ledRight.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out').innerText;
-                    g = document.getElementById('g_out').innerText;
-                    b = document.getElementById('b_out').innerText;
                     mBot.processColor(1, r, g, b);
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
                 });
                 ledBoth.addEventListener('touchstart', _ => {
-                    r = document.getElementById('r_out').innerText;
-                    g = document.getElementById('g_out').innerText;
-                    b = document.getElementById('b_out').innerText;
                     mBot.processColor(0, r, g, b);
                     ledBoth.style.backgroundColor = document.getElementById("hex").innerText;
                     ledRight.style.backgroundColor = document.getElementById("hex").innerText;
